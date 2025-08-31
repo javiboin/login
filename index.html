@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="loginForm" novalidate>
+        <h1>Login</h1>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required autocomplete="off">
+        <div id="emailError" class="errorMessage"></div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="show-hide">Show/Hide</span>
+        <div id="passwordError" class="errorMessage"></div>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <div id="confirmPasswordError" class="errorMessage"></div>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
