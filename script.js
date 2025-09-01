@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const passwordError = document.getElementById('passwordError');
     const confirmPasswordInput = document.getElementById('confirmPassword');
     const confirmPasswordError = document.getElementById('confirmPasswordError');
+    const showHideButton = document.getElementById('show-hide');
 
     loginForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -26,6 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     confirmPasswordInput.addEventListener('change', function() {
         clearError(confirmPasswordError);
+    })
+
+    showHideButton.addEventListener('click', function() {
+        if (passwordInput.type == 'password') {
+            passwordInput.type = 'text';
+            confirmPasswordInput.type = 'text';
+            showHideButton.innerHTML = 'Ocultar';
+        } else {
+            passwordInput.type = 'password',
+            confirmPasswordInput.type = 'password';
+            showHideButton.innerHTML = 'Mostrar';
+        }
     })
 
     function validateForm() {
