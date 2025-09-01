@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isPasswordMatch = passwordMatch();
 
         if (isValidEmail && isValidPassword && isPasswordMatch) {
-            // guardar email en el localStorage y generar un JSON en consola
+            saveToLocalStorage();
             alert('Formulario enviado correctamente');
         }
     }
@@ -82,5 +82,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function clearError (errorElement) {
         errorElement.innerHTML = '';
         errorElement.display = 'none';
+    }
+
+    function saveToLocalStorage() {
+        const emailValue = emailInput.value.trim();
+        localStorage.setItem('email', emailValue);
+        const body = generateJSON();
+        console.log(body);
+    }
+
+    function generateJSON() {
+        return {
+            "email": emailInput.value,
+            "password": passwordInput.value
+        }
     }
 });
